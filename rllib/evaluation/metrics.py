@@ -223,7 +223,7 @@ def summarize_episodes(
             custom_metrics[k + "_mean"] = np.mean(filt)
             if filt:
                 custom_metrics[k + "_min"] = np.min(filt)
-                custom_metrics[k + "_max"] = np.max(filt)
+                custom_metrics[k ] = filt[-1]  # Just store the most recent value! Not the max
             else:
                 custom_metrics[k + "_min"] = float("nan")
                 custom_metrics[k + "_max"] = float("nan")
